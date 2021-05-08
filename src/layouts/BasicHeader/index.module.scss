@@ -1,0 +1,72 @@
+.basic {
+  height: 100vh;
+  width: 100vw;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.2;
+  transition: 0.5s linear;
+  z-index: 1;
+}
+
+.header:hover {
+  opacity: 1;
+}
+
+.avatarArea {
+  height: 60px;
+  padding: 10px;
+  display: flex;
+  cursor: pointer;
+}
+
+.avatar {
+  height: 40px;
+  width: 60px;
+  padding: 0 10px;
+  border-radius: 50%;
+}
+
+.avatarText {
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+}
+
+.navigation {
+  height: 60px;
+  display: flex;
+  padding: 15px;
+}
+
+.navItem {
+  height: 100%;
+  width: 100px;
+  display: flex;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.navLink {
+  position: absolute;
+  height: 30px;
+  width: 80px;
+}
+
+.navIcon {
+  height: 30px;
+  width: 30px;
+}
+
+.navText {
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  color: black;
+}

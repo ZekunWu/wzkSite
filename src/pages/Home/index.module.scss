@@ -1,0 +1,50 @@
+.homePage {
+  height: 100vh;
+  width: 100vw;
+}
+
+.background {
+  height: 100vh;
+  width: 100vw;
+}
+
+.backgroundList {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.backgroundItem {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 110vh;
+  width: 100vw;
+}
+
+.backgroundItemCur {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 110vh;
+  width: 100vw;
+  animation: slideImg 10s ease-out 0s infinite;
+}
+
+@keyframes slideImg {
+  from {top: 0vh}
+  to {top: -10vh}
+}
+
+.backgroundText {
+  position: absolute;
+  height: 60px;
+  width: 50vw;
+  left: 25vw;
+  top: 40vh;
+  line-height: 60px;
+  font-size: 2em;
+  text-align: center;
+  font-family: "Microsoft YaHei";
+}
