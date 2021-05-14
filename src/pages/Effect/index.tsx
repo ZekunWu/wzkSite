@@ -1,9 +1,16 @@
 import React, { FC, useEffect, useState, useRef } from 'react';
 import styles from './index.module.scss';
+import Img1 from '@/img/bg1.png';
+import Img2 from '@/img/bg2.png';
+import Img3 from '@/img/bg3.png';
+import Img4 from '@/img/bg4.png';
+import Img5 from '@/img/bg5.png';
+import Img6 from '@/img/bg6.png';
+
 import { logger } from 'ice';
 
 const Effect: FC = () => {
-  const [imgArray] = useState(new Array(6).fill(0));
+  const [imgArray] = useState([Img1, Img2, Img3, Img4, Img5, Img6]);
   const [initialX, setInitialX] = useState<number | null>(null);
   const getEle = (str: string): HTMLElement => {
     return document.getElementById(`banner${ str}`) as HTMLElement;
@@ -45,7 +52,7 @@ const Effect: FC = () => {
       <div className={styles.banner} id="banner">
         {imgArray.map((value, index) =>
           (<div className={styles[`bannerItem${ index}`]} key={index} id={`banner${index}`}>
-            <img style={{ height: '100%', width: 'auto' }} src={`/src/img/bg${index + 1}.png`} alt={String(index)} />
+            <img style={{ height: '100%', width: 'auto' }} src={value} alt={String(index)} />
           </div>))}
       </div>
     </div>
