@@ -11,7 +11,7 @@ const appConfig: IAppConfig = {
     fallback: loading(),
     modifyRoutes: (routes) => {
       return routes;
-    }
+    },
   },
 };
 

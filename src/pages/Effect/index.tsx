@@ -12,12 +12,12 @@ const Effect: FC = () => {
   xRef.current = initialX;
   useEffect(() => {
     getEle('').addEventListener('mousemove', (e) => {
-      if(!xRef.current){
-        setInitialX(e.offsetX); 
-        return
+      if (!xRef.current) {
+        setInitialX(e.offsetX);
+        return;
       }
       const deltaX = e.offsetX - xRef.current;
-      logger.info(deltaX)
+      logger.info(deltaX);
       getEle('1').style.filter = `blur(${deltaX / window.innerWidth * 10}px)`;
       getEle('4').style.filter = `blur(${Math.abs(5 - deltaX / window.innerWidth * 20)}px)`;
       getEle('4').style.transform = `translate(${deltaX / 10}px)`;
@@ -41,11 +41,13 @@ const Effect: FC = () => {
     return () => {};
   }, []);
   return (
-    <div className={styles.banner} id="banner">
-      {imgArray.map((value, index) =>
-        (<div className={styles[`bannerItem${ index}`]} key={index} id={`banner${index}`}>
-          <img style={{ height: '100%', width: 'auto' }} src={`/src/img/bg${index + 1}.png`} alt={String(index)} />
-        </div>))}
+    <div className={styles.effectPage}>
+      <div className={styles.banner} id="banner">
+        {imgArray.map((value, index) =>
+          (<div className={styles[`bannerItem${ index}`]} key={index} id={`banner${index}`}>
+            <img style={{ height: '100%', width: 'auto' }} src={`/src/img/bg${index + 1}.png`} alt={String(index)} />
+          </div>))}
+      </div>
     </div>
   );
 };

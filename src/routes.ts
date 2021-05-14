@@ -1,10 +1,13 @@
 import { lazy } from 'ice';
 import BasicHeader from '@/layouts/BasicHeader';
-const BasicLayout = lazy(() => import('@/layouts/BasicLayout')) ;
-const Dashboard = lazy(() => import('@/pages/Dashboard')) ;
+
+const BasicLayout = lazy(() => import('@/layouts/BasicLayout'));
+const Dashboard = lazy(() => import('@/pages/Dashboard'));
 const Home = lazy(() => import('@/pages/Home'));
 const Effect = lazy(() => import('@/pages/Effect'));
 const Editor = lazy(() => import('@/pages/Editor'));
+const Blog = lazy(() => import('@/pages/Blog'));
+const BlogList = lazy(() => import('@/pages/BlogList'));
 
 const routerConfig = [
   {
@@ -25,6 +28,16 @@ const routerConfig = [
         path: '/editor',
         exact: true,
         component: Editor,
+      },
+      {
+        path: '/blogList',
+        exact: true,
+        component: BlogList,
+      },
+      {
+        path: '/blog/:id',
+        exact: true,
+        component: Blog,
       },
     ],
   },

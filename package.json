@@ -5,7 +5,11 @@
   "dependencies": {
     "@alifd/next": "^1.19.4",
     "@alifd/theme-design-pro": "^0.x",
+    "@types/highlightjs": "^9.12.1",
+    "@types/marked": "^2.0.2",
     "codemirror": "https://gitee.com/zekunwu/codemirror-wzk.git",
+    "highlight.js": "^10.7.2",
+    "marked": "^2.0.3",
     "moment": "^2.24.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
