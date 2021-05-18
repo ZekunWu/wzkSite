@@ -23,7 +23,7 @@ marked.setOptions({
   gfm: true,
   breaks: true,
   pedantic: false,
-  sanitize: false,// 为true时会使<br>无法识别
+  sanitize: false, // 为true时会使<br>无法识别
   smartLists: true,
   smartypants: true,
   highlight(code) {
@@ -35,7 +35,7 @@ function Blog() {
   const [blog, setBlog] = useState<BlogItem>();
   const { id } = useParams<RouteParams>();
   useEffect(() => {
-    Http.get('/blogs/' + id).then((res) => {
+    Http.get(`/blogs/${ id}`).then((res) => {
       setBlog(res);
     });
   }, []);

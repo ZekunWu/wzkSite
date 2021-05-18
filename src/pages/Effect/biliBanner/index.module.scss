@@ -1,0 +1,46 @@
+
+.banner {
+  position: relative;
+  height: 9.375vw;
+  min-height: 155px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bannerItem {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.bannerItem0 {
+  composes: bannerItem;
+  filter: blur(4px);
+}
+
+.bannerItem1 {
+  composes: bannerItem;
+  filter: blur(0);
+}
+
+.bannerItem2 {
+  composes: bannerItem;
+  filter: blur(1px);
+}
+
+.bannerItem3 {
+  composes: bannerItem;
+  filter: blur(4px);
+}
+
+.bannerItem4 {
+  composes: bannerItem;
+  filter: blur(5px);
+}
+
+.bannerItem5 {
+  composes: bannerItem;
+  filter: blur(6px);
+}

@@ -32,7 +32,7 @@ const getDevice: IGetDevice = (width) => {
 };
 
 function BlogList() {
-  const [blogs, setBlogs] = useState<Array<BlogItem>>([]);
+  const [blogs, setBlogs] = useState<BlogItem[]>([]);
   const history = useHistory();
   useEffect(() => {
     Http.get('/blogs').then((res) => {
@@ -42,9 +42,9 @@ function BlogList() {
 
   const [device, setDevice] = useState(getDevice(NaN));
 
-  const toBlog = function(id: number): void {
-    history.push('/blog/' + id)
-  }
+  const toBlog = function (id: number): void {
+    history.push(`/blog/${ id}`);
+  };
 
   if (typeof window !== 'undefined') {
     window.addEventListener('optimizedResize', (e) => {
@@ -72,17 +72,16 @@ function BlogList() {
         <Shell.Content>
           <div style={{ background: '#fff' }}>
             <List>
-              {blogs.map(item => 
-                <List.Item
+              {blogs.map((item) =>
+                (<List.Item
                   key={item.name}
                   onClick={() => toBlog(item.id)}
                   media={<img width="161" height="108" src={item.imgUrl} />}
                   title={item.name}
                 >
-                  <p>{item.content.slice(0, 80)+'...'}</p>
-                  <div>{item.date + '更新'}</div>
-                </List.Item>
-              )}
+                  <p>{`${item.content.slice(0, 80)}...`}</p>
+                  <div>{`${item.date }更新`}</div>
+                </List.Item>))}
             </List>
           </div>
         </Shell.Content>
