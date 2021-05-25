@@ -13,7 +13,7 @@ function BasicHeader({ children }: {children: React.ReactNode}) {
     <Menu>
       <Menu.Item>
         <a target="_blank" rel="noopener noreferrer" onClick={() => history.push('/editor')}>
-          CodeMirror
+          codemirror-wzk
         </a>
       </Menu.Item>
     </Menu>
