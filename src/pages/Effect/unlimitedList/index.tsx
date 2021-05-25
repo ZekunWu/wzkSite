@@ -1,4 +1,3 @@
-import { logger } from 'ice';
 import React, { useRef, useState, CSSProperties, useEffect, FC } from 'react';
 
 export interface UnlimitedListProps {
@@ -39,15 +38,14 @@ const UnlimitedList: FC<UnlimitedListProps> = ({ listArr, size, bufferSize, item
     setList(listArr.slice(0, size));
   }, []);
   const handleOnScroll = () => {
-    if (ref1 && ref1.current) { // 缺个判断不超过1000个
+    if (ref1 && ref1.current) {
       let first = Math.floor(ref1.current.scrollTop / itemHeight); let top = bufferTop; let
         bottom = bufferBottom;
-      console.log('first: ', first);
       if (bufferTop === 0 && first > 0) {
         setBufferTop(bufferSize);
         top = bufferSize;
       }
-      if (first >= listArr.length - size) {
+      if (first >= listArr.length - size) { // ul由于是absolute可以超出scrollHeight进行滑动，所以需要对ul的长度进行调整
         setBufferBottom(0);
         bottom = 0;
         first = listArr.length - size;

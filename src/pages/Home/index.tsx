@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import Img1 from '/src/img/remChild.jpg';
 import Img2 from '@/img/saber4.png';
-import Img3 from '@/img/saber2.png';
-import Img4 from '@/img/486.png';
-import Img5 from '@/img/saber3.png';
+import Img3 from '@/img/486.png';
+import Img4 from '@/img/saber3.png';
+import Img5 from '@/img/saber2.png';
 
 function Home() {
   const [imgArray, setImgArray] = useState([Img1, Img2, Img3, Img4, Img5]);

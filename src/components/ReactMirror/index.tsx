@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-prop-types */
 import React, { useState, useEffect, useRef } from 'react';
 import CodeMirror from 'codemirror';
 import 'codemirror/lib/codemirror.css';
@@ -12,8 +13,9 @@ interface MirrorProps {
   width: string;
   height: string;
   refMirror: (editor: CodeMirror.EditorFromTextArea) => void;
+  onChange?: (editor: CodeMirror.Editor, changeObj: CodeMirror.EditorChange) => void;
   onMousedown?: DomEvent;
-  onKeyPress?: DomEvent;
+  onKeypress?: DomEvent;
   onCursorActivity?: (editor: CodeMirror.Editor) => void;
 }
 
@@ -39,20 +41,6 @@ function ReactMirror(props: MirrorProps) {
       // 设置尺寸
       iniEditor.setSize(width, height);
     }
-    Object.keys(props || {}).filter((p) => /^on/.test(p)).forEach((prop) => {
-      switch (prop) {
-        case 'onKeyPress':
-          iniEditor.on('keypress', (cm, event) => {
-            if (props.onKeyPress) props.onKeyPress(iniEditor, event);
-          });
-          break;
-        case 'onCursorActivity':
-          iniEditor.on('cursorActivity', (cm) => {
-            if (props.onCursorActivity) props.onCursorActivity(iniEditor);
-          });
-          break;
-      }
-    });
     return () => {
       if (editor) {
         editor.toTextArea();
