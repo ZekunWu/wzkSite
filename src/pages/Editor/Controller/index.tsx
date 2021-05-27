@@ -26,11 +26,9 @@ function Controller() {
     // logger.info('mousedown', editor);
   };
   const handleOnCursor = function (editor: CodeMirror.EditorFromTextArea): void {
-    logger.info('cursor');
     const selection = editor.getSelection('position')[0];
     setCurAction((cur) => {
-      logger.info(cur);
-      setTimeout(() => {
+      setTimeout(() => { // 延时赋值解决报错信息
         setActionList((act) =>
           [...act,
             {

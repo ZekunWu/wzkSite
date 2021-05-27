@@ -5,6 +5,7 @@
   "dependencies": {
     "@alifd/next": "^1.19.4",
     "@alifd/theme-design-pro": "^0.x",
+    "@material-ui/core": "^4.11.4",
     "@types/highlightjs": "^9.12.1",
     "@types/marked": "^2.0.2",
     "codemirror": "https://gitee.com/zekunwu/codemirror-wzk.git",

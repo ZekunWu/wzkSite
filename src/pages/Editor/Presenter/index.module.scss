@@ -21,3 +21,15 @@
   height: calc(100% - 61px);
   overflow: auto;
 }
+
+.playArea {
+  display: flex;
+  justify-content: center;
+}
+
+.playButton {
+  height: 30px;
+  width: 30px;
+  margin: 0 10px;
+  cursor: pointer;
+}
