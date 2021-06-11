@@ -7,27 +7,29 @@ import Img4 from '@/img/saber3.png';
 import Img5 from '@/img/saber2.png';
 
 function Home() {
-  const [imgArray, setImgArray] = useState([Img1, Img2, Img3, Img4, Img5]);
+  const [imgArray] = useState([Img5, Img1, Img2, Img3, Img4]);
+  const [curImg, setCurImg] = useState(0);
   useEffect(() => {
     const animated = document.getElementById('change');
     animated.addEventListener('animationiteration', () => {
-      const arr: string[] = imgArray;
-      arr.push(arr.shift() as string);
-      setImgArray([...arr]);
+      setCurImg((cur) => (cur === 4 ? 0 : cur + 1));
     });
   }, []);
   return (
     <div className={styles.homePage}>
       <div className={styles.background}>
         <div className={styles.backgroundList}>
+          <img
+            className={styles.backgroundItemCur}
+            id="change"
+            src={imgArray[curImg]}
+            alt=""
+          />
+        </div>
+        {/* 图片预加载，避免加载图片的时延导致动画和图片切换不同步 */}
+        <div style={{ height: '0', width: '0', overflow: 'hidden' }}>
           {imgArray.map((item, index) =>
-            (<img
-              key={String(index)}
-              className={index === imgArray.length - 1 ? styles.backgroundItemCur : styles.backgroundItem}
-              id={index === imgArray.length - 1 ? 'change' : 'unchange'}
-              src={item}
-              alt=""
-            />))}
+            (<img key={String(index)} src={item} />))}
         </div>
       </div>
     </div>
