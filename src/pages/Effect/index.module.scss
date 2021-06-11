@@ -24,7 +24,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
-  background-image: linear-gradient(to right, red, orange, yellow, green, yellow, orange, red, orange, yellow, green, yellow, orange, red);
+  background-image: linear-gradient(
+    to right, red, orange, yellow, green, yellow, 
+    orange, red, orange, yellow, green, yellow, orange, red
+  );
   background-clip: text; // 背景被裁剪成文字的前景色。   
   -webkit-text-fill-color: transparent;
   background-size: 200% 100%;
