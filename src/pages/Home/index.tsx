@@ -9,12 +9,12 @@ import Img5 from '@/img/saber2.png';
 function Home() {
   const [imgArray, setImgArray] = useState([Img1, Img2, Img3, Img4, Img5]);
   useEffect(() => {
-    const timer: number = window.setInterval(() => {
+    const animated = document.getElementById('change');
+    animated.addEventListener('animationiteration', () => {
       const arr: string[] = imgArray;
       arr.push(arr.shift() as string);
       setImgArray([...arr]);
-    }, 10000);
-    return () => clearInterval(timer);
+    });
   }, []);
   return (
     <div className={styles.homePage}>
@@ -24,6 +24,7 @@ function Home() {
             (<img
               key={String(index)}
               className={index === imgArray.length - 1 ? styles.backgroundItemCur : styles.backgroundItem}
+              id={index === imgArray.length - 1 ? 'change' : 'unchange'}
               src={item}
               alt=""
             />))}
