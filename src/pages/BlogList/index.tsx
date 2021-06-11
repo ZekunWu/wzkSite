@@ -64,8 +64,8 @@ function BlogList() {
         </Shell.Navigation>
         <Shell.Navigation>
           <Nav embeddable aria-label="global navigation">
-            <Nav.Item icon="favorites-filling">Javascript</Nav.Item>
-            <Nav.Item icon="favorites-filling">React</Nav.Item>
+            <Nav.Item icon="favorites-filling">前端</Nav.Item>
+            <Nav.Item icon="favorites-filling">其他</Nav.Item>
           </Nav>
         </Shell.Navigation>
 

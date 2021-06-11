@@ -33,7 +33,7 @@ function BasicHeader({ children }: {children: React.ReactNode}) {
                 <div className={styles.navText}>组件</div>
               </div>
           }
-            triggerType={['click', 'hover']}
+            triggerType={['click']}
           >
             {menu}
           </Dropdown>

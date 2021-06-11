@@ -16,6 +16,7 @@
 }
 
 .backgroundItem {
+  visibility: hidden;
   position: absolute;
   left: 0;
   top: 0;
@@ -24,6 +25,7 @@
 }
 
 .backgroundItemCur {
+  visibility: visible;
   position: absolute;
   left: 0;
   top: 0;
