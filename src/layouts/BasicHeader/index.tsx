@@ -18,6 +18,20 @@ function BasicHeader({ children }: {children: React.ReactNode}) {
       </Menu.Item>
     </Menu>
   );
+  const menu1 = (
+    <Menu>
+      <Menu.Item>
+        <a target="_blank" rel="noopener noreferrer" onClick={() => history.push('/backgroundWall')}>
+          背景墙
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a target="_blank" rel="noopener noreferrer" onClick={() => history.push('/effect')}>
+          小玩意
+        </a>
+      </Menu.Item>
+    </Menu>
+  );
   return (
     <div className={styles.Basic}>
       <div className={history.location.pathname === '/' ? styles.header : styles.header1}> {/* 只有在首页的时候header作为半透明 */}
@@ -37,10 +51,17 @@ function BasicHeader({ children }: {children: React.ReactNode}) {
           >
             {menu}
           </Dropdown>
-          <div className={styles.navItem} onClick={() => history.push('/effect')}>
-            <img className={styles.navIcon} src={Img3} alt="" />
-            <div className={styles.navText}>特效</div>
-          </div>
+          <Dropdown
+            trigger={
+              <div className={styles.navItem}>
+                <img className={styles.navIcon} src={Img3} alt="" />
+                <div className={styles.navText}>特效</div>
+              </div>
+          }
+            triggerType={['click']}
+          >
+            {menu1}
+          </Dropdown>
           <div className={styles.navItem} onClick={() => history.push('/blogList')}>
             <img className={styles.navIcon} src={Img4} alt="" />
             <div className={styles.navText}>博客</div>
